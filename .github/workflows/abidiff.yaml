@@ -35,11 +35,11 @@ jobs:
         python3
         zlib1g-dev
 
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
       with:
         path: current
 
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
       with:
         path: previous
         fetch-depth: 0
