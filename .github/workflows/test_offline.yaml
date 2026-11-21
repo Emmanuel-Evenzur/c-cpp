@@ -31,7 +31,7 @@ jobs:
     name: ubuntu (${{ matrix.tls_backend }})
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: install common libraries
         run: |
           sudo apt-get update

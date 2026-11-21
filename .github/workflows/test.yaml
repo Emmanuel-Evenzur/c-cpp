@@ -34,7 +34,7 @@ jobs:
     continue-on-error: true
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: run style check
         run: |
           clang-format --version
@@ -55,7 +55,7 @@ jobs:
           name: (32-bit)
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: install libraries
         run: |
           sudo dpkg --add-architecture i386
@@ -80,7 +80,7 @@ jobs:
     name: ubuntu (${{ matrix.tls_backend }})
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: install common libraries
         run: |
           sudo apt-get update
@@ -127,7 +127,7 @@ jobs:
     name: macos (${{ matrix.tls_backend }})
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: install Mbed TLS
         if: matrix.tls_backend == 'mbedtls'
         run: brew install mbedtls@3
@@ -183,7 +183,7 @@ jobs:
         git config --global core.autocrlf false
         git config --global core.eol lf
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
     - name: Export GitHub Actions cache environment variables
       uses: actions/github-script@v7
       with:
